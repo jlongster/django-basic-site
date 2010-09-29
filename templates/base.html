@@ -5,7 +5,15 @@
     <title>PaintMe</title>
     <link rel="stylesheet" type="text/css" href="/media/css/base.css" />
   </head>
-  <body>
-    {% block content %}{% endblock %}
+  <body class="{{ page }}">
+    <div class="header">
+      <h1><a href="/">PaintMe</a></h1>
+       {% if page %}<h4>{{ page|title }}</h4>{% endif %}
+    </div>
+    
+    <div class="content">
+      {% block content %}{% endblock %}
+      <div class="clear"></div>
+    </div>
   </body>
 </html>

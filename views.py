@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response
-from django.contrib.auth import forms
+from django.template import RequestContext
 
 def index(request):
-    return render_to_response('test.html',
-                              { 'user_form': forms.AuthenticationForm()})
+    return render_to_response(
+        'index.html',
+        RequestContext(request, { 'page': 'index' })
+        )

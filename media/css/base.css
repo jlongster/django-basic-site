@@ -1,4 +1,74 @@
 
 body {
-    background-color: #CCCCCC;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, arial, sans-serif;
 }
+
+.clear {
+    clear: both;
+}
+
+.header {
+    padding: 15px;
+}
+
+.header h1 {
+    margin: 0 20px;
+    display: inline;
+}
+
+.header h4 {
+    display: inline;
+}
+
+.content {
+    background: #CCCCCC url(/media/images/shadow.png) repeat-x 0 0;
+    padding: 10px;
+}
+
+/* General form stylings */
+
+.errors {
+    border: 2px solid red;
+    background-color: #FFCCCC;
+    margin: 10px 0;
+    padding: 15px;
+}
+.form-field {
+    margin: 15px 0;
+    color: #555555;
+    font-size: .9em;
+}
+
+.form-error {
+    color: #993333;
+}
+
+/* Specific form stylings */
+
+.login-form, .register-form {
+    background: white;
+    width: 400px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.index .login-form {
+    float: right;
+    margin: 0;
+}
+
+.login-form h2,
+.register-form h2 {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.login-message {
+    font-size: .75em;
+    color: #999999;
+    margin: 15px 0;
+}
+

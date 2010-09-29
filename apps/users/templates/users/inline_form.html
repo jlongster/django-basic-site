@@ -1,0 +1,37 @@
+<div class="login-form">
+  
+  {% if user_form %}
+
+  <h2>Login</h2>
+
+  {% if user_form.errors %}
+  <div class="errors">
+    {% for field, error in user_form.errors.iteritems %} 
+      {% ifequal field "__all__" %}
+        {{ error }}
+      {% else %}
+        {{ field|title }}: {{ error }}
+      {% endifequal %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  <form action="{{ post_url }}" method="POST">
+    {% csrf_token %}
+    {{ user_form.username.label_tag }}: {{ user_form.username }} <br />
+    {{ user_form.password.label_tag }}: {{ user_form.password }} <br/>
+
+    <div class="login-message">
+      Don't have an account?  <a href="{% url users:register %}">Register now!</a>
+    </div>
+    
+    <input type="submit" value="Login" />
+  </form>
+  
+  {% else %}
+
+  Logged in!
+  
+  {% endif %}
+
+</div>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="register-form">
+  <h2>Register</h2>
+
+  <form action="." method="post">
+    {% csrf_token %}
+    
+    {% for field in form %}
+    <div class="form-field {{ field.label|slugify }} {% if field.errors %}form-error{% endif %}">
+      {{ field.errors }}
+      <div class="form-label">
+        <label for="{{ field.label }}">{{ field.label_tag }}</label>
+      </div>
+      <div class="form-input">{{field}}</div>
+    </div>
+    {% endfor %}
+    
+    <input type="submit" value="Register" />
+  </form>
+</div>
+
+{% endblock %}
+
